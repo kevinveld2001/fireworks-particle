@@ -9,6 +9,7 @@ function newbal(x, y, ) {
         s: 10,
         movex: 1,
         movey: 0,
+        color:"#ffffff"
     }
     var bal2 = {
         x: x,
@@ -16,6 +17,7 @@ function newbal(x, y, ) {
         s: 10,
         movex: 0,
         movey: 1,
+        color:"#ffffff"
     }
     var bal3 = {
         x: x,
@@ -23,6 +25,7 @@ function newbal(x, y, ) {
         s: 10,
         movex: -1,
         movey: 0,
+        color:"#ffffff"
     }
     var bal4 = {
         x: x,
@@ -30,6 +33,7 @@ function newbal(x, y, ) {
         s: 10,
         movex: 0,
         movey: -1,
+        color:"#ffffff"
     }
     var bal5 = {
         x: x,
@@ -37,6 +41,7 @@ function newbal(x, y, ) {
         s: 7,
         movex: -0.7,
         movey: -0.7,
+        color:"#ff0000"
     }
     var bal6 = {
         x: x,
@@ -44,6 +49,7 @@ function newbal(x, y, ) {
         s: 7,
         movex: 0.7,
         movey: -0.7,
+        color:"#ff0000"
     }
     var bal7 = {
         x: x,
@@ -51,6 +57,7 @@ function newbal(x, y, ) {
         s: 7,
         movex: 0.7,
         movey: 0.7,
+        color:"#ff0000"
     }
     var bal8 = {
         x: x,
@@ -58,6 +65,7 @@ function newbal(x, y, ) {
         s: 7,
         movex: -0.7,
         movey: 0.7,
+        color:"#ff0000"
     }
 
     balllist.push(bal1)

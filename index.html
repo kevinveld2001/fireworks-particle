@@ -92,7 +92,7 @@
                     if (bal.s < 0.2) {
                         delete balllist[a]
                     }
-                    drawbal(bal.x, bal.y, bal.s)
+                    drawbal(bal.x, bal.y, bal.s,bal.color)
                 }
             }
         }
@@ -100,10 +100,10 @@
 
 
 
-        function drawbal(x, y, s) {
+        function drawbal(x, y, s,color) {
 
-            ctx.fillStyle = "#ffffff"
-            ctx.strokeStyle = "#ffffff"
+            ctx.fillStyle = color
+            ctx.strokeStyle = color
             ctx.beginPath();
             ctx.arc(x, y, s, 0, Math.PI * 2);
             ctx.fill();
