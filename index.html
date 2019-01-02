@@ -95,6 +95,14 @@
                         delete balllist[a]
                     }
                     drawbal(bal.x, bal.y, bal.s,bal.color)
+                    if (bal.knetter){
+                        
+                        var num1 = Math.random() * 40
+                        var num2 = num1 - 20
+                        var num3 = Math.random() * 40
+                        var num4 = num3 - 20
+                        drawbal(bal.x + num2, bal.y + num4, 1,"#ffffff")
+                    }
                 }
             }
         }
@@ -105,9 +113,10 @@
         function drawbal(x, y, s,color) {
 
             ctx.fillStyle = color
-            
+
             ctx.beginPath();
-            ctx.arc(x, y, s, 0, Math.PI * 2);
+            ctx.moveTo(x, y);
+            ctx.arc(x, y, s ,0, Math.PI * 2,true);
             ctx.fill();
             ctx.closePath();
 

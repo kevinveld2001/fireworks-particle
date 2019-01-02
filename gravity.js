@@ -7,6 +7,12 @@ function newbal(x, y, ) {
     
     var thiscolor = colorlist[Math.round(Math.random() * 10)]
  var nutraal = "#ffffff"
+
+ var knetter = false
+ if (Math.random() * 10 > 6){
+     knetter = true
+ }
+
  var size = 10 + Math.random() /6
     if (Math.round(Math.random() * 10) > 8){
         nutraal = thiscolor
@@ -23,7 +29,8 @@ function newbal(x, y, ) {
         s: size,
         movex: 1,
         movey: 0,
-        color:nutraal
+        color:nutraal,
+        knetter:knetter
     }
     var bal2 = {
         x: x,
@@ -31,7 +38,8 @@ function newbal(x, y, ) {
         s: size,
         movex: 0,
         movey: 1,
-        color:nutraal
+        color:nutraal,
+        knetter:knetter
     }
     var bal3 = {
         x: x,
@@ -39,7 +47,8 @@ function newbal(x, y, ) {
         s: size,
         movex: -1,
         movey: 0,
-        color:nutraal
+        color:nutraal,
+        knetter:knetter
     }
     var bal4 = {
         x: x,
@@ -47,7 +56,8 @@ function newbal(x, y, ) {
         s: size,
         movex: 0,
         movey: -1,
-        color:nutraal
+        color:nutraal,
+        knetter:knetter
     }
 
 var size2 = size -= 3  - Math.random() /5
@@ -58,7 +68,8 @@ var size2 = size -= 3  - Math.random() /5
         s:size2,
         movex: -0.7,
         movey: -0.7,
-        color:thiscolor
+        color:thiscolor,
+        knetter:knetter
     }
     var bal6 = {
         x: x,
@@ -66,7 +77,8 @@ var size2 = size -= 3  - Math.random() /5
         s: size2,
         movex: 0.7,
         movey: -0.7,
-        color:thiscolor
+        color:thiscolor,
+        knetter:knetter
     }
     var bal7 = {
         x: x,
@@ -74,7 +86,8 @@ var size2 = size -= 3  - Math.random() /5
         s: size2,
         movex: 0.7,
         movey: 0.7,
-        color:thiscolor
+        color:thiscolor,
+        knetter:knetter
     }
     var bal8 = {
         x: x,
@@ -82,7 +95,8 @@ var size2 = size -= 3  - Math.random() /5
         s: size2,
         movex: -0.7,
         movey: 0.7,
-        color:thiscolor
+        color:thiscolor,
+        knetter:knetter
     }
 
     balllist.push(bal1)
