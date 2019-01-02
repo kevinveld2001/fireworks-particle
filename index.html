@@ -86,7 +86,7 @@
                     var bal = balllist[a]
                    // console.log(bal)
                     bal.x += bal.movex
-                    bal.y += bal.movey
+                    bal.y += bal.movey + 0.1
                     bal.movey +=0.03
                     bal.s -= 0.14
                     balllist[a] = bal
@@ -121,8 +121,8 @@ setInterval (doauto,200)
 function doauto(){
     var x = Math.random() * window.innerWidth
     var y = Math.random() * window.innerHeight
-    console.log ("x = "+ x)
-    console.log ("y = "+ y)
+    //console.log ("x = "+ x)
+   // console.log ("y = "+ y)
     newbal(x,y)
 
 }
