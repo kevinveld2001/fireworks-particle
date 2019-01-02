@@ -7,6 +7,7 @@ function newbal(x, y, ) {
     
     var thiscolor = colorlist[Math.round(Math.random() * 10)]
  var nutraal = "#ffffff"
+ var size = 10 + Math.random() /6
     if (Math.round(Math.random() * 10) > 8){
         nutraal = thiscolor
     }else if (Math.round(Math.random() * 10) > 4){
@@ -19,7 +20,7 @@ function newbal(x, y, ) {
     var bal1 = {
         x: x,
         y: y,
-        s: 10,
+        s: size,
         movex: 1,
         movey: 0,
         color:nutraal
@@ -27,7 +28,7 @@ function newbal(x, y, ) {
     var bal2 = {
         x: x,
         y: y,
-        s: 10,
+        s: size,
         movex: 0,
         movey: 1,
         color:nutraal
@@ -35,7 +36,7 @@ function newbal(x, y, ) {
     var bal3 = {
         x: x,
         y: y,
-        s: 10,
+        s: size,
         movex: -1,
         movey: 0,
         color:nutraal
@@ -43,18 +44,18 @@ function newbal(x, y, ) {
     var bal4 = {
         x: x,
         y: y,
-        s: 10,
+        s: size,
         movex: 0,
         movey: -1,
         color:nutraal
     }
 
-
+var size2 = size -= 3  - Math.random() /5
 
     var bal5 = {
         x: x,
         y: y,
-        s: 7,
+        s:size2,
         movex: -0.7,
         movey: -0.7,
         color:thiscolor
@@ -62,7 +63,7 @@ function newbal(x, y, ) {
     var bal6 = {
         x: x,
         y: y,
-        s: 7,
+        s: size2,
         movex: 0.7,
         movey: -0.7,
         color:thiscolor
@@ -70,7 +71,7 @@ function newbal(x, y, ) {
     var bal7 = {
         x: x,
         y: y,
-        s: 7,
+        s: size2,
         movex: 0.7,
         movey: 0.7,
         color:thiscolor
@@ -78,7 +79,7 @@ function newbal(x, y, ) {
     var bal8 = {
         x: x,
         y: y,
-        s: 7,
+        s: size2,
         movex: -0.7,
         movey: 0.7,
         color:thiscolor
