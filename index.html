@@ -15,16 +15,24 @@
             top: 0px;
             left: 0px;
         }
+        .btn{
+            position: absolute;
+            left:0px;
+            top:0px;
+            z-index: 10;
+        }
     </style>
 
     <!-- canvas ctx -->
-    <canvas id="ctx"onclick="newbal(muisx, muisy)" onmousedown="down()" onmouseup="up()"></canvas>
+    <canvas id="ctx" onclick="newbal(muisx, muisy)" onmousedown="down()" onmouseup="up()"></canvas>
+    <button class="btn" onclick="auto()">auto</button>
     <script src="gravity.js"></script>
     <script>
         //main
         var ctx = document.getElementById("ctx").getContext("2d");
         ctx.font = '30px Arial'
-  
+        var screenw
+        var screenh 
 
         //end main
 
@@ -50,39 +58,42 @@
             muisy = mouse.clientY;
         }
         var isdown = false
-        function up(){
-           isdown = false
-        }
-        function down(){
-        isdown = true
+
+        function up() {
+            isdown = false
         }
 
-        setInterval(click,70)
+        function down() {
+            isdown = true
+        }
+
+        setInterval(click, 70)
+
         function click() {
-            if(isdown){
-            newbal(muisx, muisy)
-            console.log('mk bal')
+            if (isdown) {
+                newbal(muisx, muisy)
+                console.log('mk bal')
             }
         }
-    
-        function move (){
-            for (var a = 0 ; a < balllist.length ; a++){
-                if (balllist[a] == undefined){
-                    if (a == 0){
+
+        function move() {
+            for (var a = 0; a < balllist.length; a++) {
+                if (balllist[a] == undefined) {
+                    if (a == 0) {
                         balllist.shift()
                     }
-                }else{
-                var bal = balllist[a]
-                console.log (bal)
-                bal.x += bal.movex
-                bal.y += bal.movey + 0.1
-                bal.s -= 0.1
-                balllist[a] = bal
-                if (bal.s < 0.2){
-                    delete balllist[a]
+                } else {
+                    var bal = balllist[a]
+                   // console.log(bal)
+                    bal.x += bal.movex
+                    bal.y += bal.movey + 0.1
+                    bal.s -= 0.1
+                    balllist[a] = bal
+                    if (bal.s < 0.2) {
+                        delete balllist[a]
+                    }
+                    drawbal(bal.x, bal.y, bal.s)
                 }
-                drawbal(bal.x,bal.y,bal.s)
-            }
             }
         }
 
@@ -99,6 +110,21 @@
             ctx.closePath();
 
         }
+
+
+function auto(){
+setInterval (doauto,500)
+
+}
+
+function doauto(){
+    var x = Math.random() * window.innerWidth
+    var y = Math.random() * window.innerHeight
+    console.log ("x = "+ x)
+    console.log ("y = "+ y)
+    newbal(x,y)
+
+}
     </script>
 </body>
 

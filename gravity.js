@@ -59,7 +59,7 @@ function newbal(x, y, ) {
         movex: -0.7,
         movey: 0.7,
     }
-        
+
     balllist.push(bal1)
     balllist.push(bal2)
     balllist.push(bal3)
