@@ -1,1 +1,105 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #ctx {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+
+    <!-- canvas ctx -->
+    <canvas id="ctx" onmousedown="down()" onmouseup="up()"></canvas>
+    <script src="gravity.js"></script>
+    <script>
+        //main
+        var ctx = document.getElementById("ctx").getContext("2d");
+        ctx.font = '30px Arial'
+  
+
+        //end main
+
+        // clear sreen
+
+        setInterval(clearscreen, 10)
+
+        function clearscreen() {
+            ctx.canvas.width = window.innerWidth;
+            ctx.canvas.height = window.innerHeight;
+            var screenw = window.innerWidth
+            var screenh = window.innerHeight
+            ctx.clearRect(0, 0, screenw, screenh);
+            ctx.fillStyle = "#000000"
+            ctx.fillRect(0, 0, screenw, screenh)
+            move()
+        }
+        //end clear sreen
+        var muisx
+        var muisy
+        document.onmousemove = function (mouse) {
+            muisx = mouse.clientX;
+            muisy = mouse.clientY;
+        }
+        var isdown = false
+        function up(){
+           isdown = false
+        }
+        function down(){
+        isdown = true
+        }
+
+        setInterval(click,70)
+        function click() {
+            if(isdown){
+            newbal(muisx, muisy)
+            console.log('mk bal')
+            }
+        }
+    
+        function move (){
+            for (var a = 0 ; a < balllist.length ; a++){
+                if (balllist[a] == undefined){
+                    if (a == 0){
+                        balllist.shift()
+                    }
+                }else{
+                var bal = balllist[a]
+                console.log (bal)
+                bal.x += bal.movex
+                bal.y += bal.movey + 0.1
+                bal.s -= 0.1
+                balllist[a] = bal
+                if (bal.s < 0.2){
+                    delete balllist[a]
+                }
+                drawbal(bal.x,bal.y,bal.s)
+            }
+            }
+        }
+
+
+
+
+        function drawbal(x, y, s) {
+
+            ctx.fillStyle = "#ffffff"
+            ctx.strokeStyle = "#ffffff"
+            ctx.beginPath();
+            ctx.arc(x, y, s, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();
+
+        }
+    </script>
+</body>
+
+</html>
